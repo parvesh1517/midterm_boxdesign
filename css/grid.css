@@ -1,0 +1,67 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: 'Arial', sans-serif;
+   background-color: #fff;
+}
+
+.header-container, .footer-container, .product-container, .category-container, .testimonial-container, .image-container, .additional-image-container {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+
+.tile {
+   background-color: #100f0f; /* Dark color for tiles */
+   color: white;
+   text-align: center;
+   padding: 50px; /* Significantly increased padding for taller boxes */
+   margin: 10px;
+   display: block;
+   transition: transform 0.3s ease;
+}
+
+.tile:hover {
+   transform: translateY(-3px);
+   cursor: pointer;
+   text-decoration: none;
+}
+
+.logo, .navigation-menu, .contact {
+   flex: 1;
+   margin: 0; /* Remove margin for header tiles to align properly */
+}
+
+/* Adjust the flex properties to accommodate contact in the header row */
+.logo { flex-basis: 33%; }
+.navigation-menu { flex-basis:33.33%; }
+.contact { flex-basis: 33.33%; } /* Adjusted for better alignment */
+
+.banner, .main-content, .categories, .testimonials {
+   background-color: #060605; /* Dark color for full-width tiles */
+   color: white;
+   text-align: center;
+   padding: 60px; /* Consistent padding for all full-width tiles */
+   margin: 10px;
+}
+
+.image, .additional-image, .category {
+   flex-basis: calc(33.333% - 20px); /* Adjust for three columns */
+   padding: 40px; /* Adjust padding for better aspect ratio */
+}
+
+@media (max-width: 768px) {
+   .header-container, .footer-container, .product-container, .category-container, .testimonial-container, .image-container, .additional-image-container {
+       flex-direction: column;
+   }
+
+   .logo, .navigation-menu, .contact, .image, .featured-products, .new-arrivals, .category, .testimonial, .quick-links, .social-media-icons, .copyright-info {
+       flex-basis: 100%;
+       padding: 40px; /* Consistent padding for mobile */
+   }
+}
+
